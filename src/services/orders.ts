@@ -1,3 +1,5 @@
+import { appEnv } from '../lib/runtime-env'
+
 export type CreateOrderItem = {
   product_id: number
   quantity: number
@@ -55,7 +57,7 @@ export function interpretCreateOrderResponse(payload: unknown): CreateOrderResul
 }
 
 export async function createOrder(data: CreateOrderRequest): Promise<CreateOrderResult> {
-  if (import.meta.env.VITE_ORDER_SIMULATION === 'true') {
+  if (appEnv.orderSimulation) {
     return {
       ok: true,
       data: {
@@ -68,7 +70,7 @@ export async function createOrder(data: CreateOrderRequest): Promise<CreateOrder
     }
   }
 
-  const webhookUrl = import.meta.env.VITE_N8N_CREATE_ORDER_WEBHOOK_URL
+  const webhookUrl = appEnv.createOrderWebhookUrl
   if (!webhookUrl) throw new OrderRequestError('misconfigured')
 
   const controller = new AbortController()
