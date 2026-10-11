@@ -1,0 +1,9 @@
+node_modules
+.pnpm-store
+vite-preview.*.log
+vite-dev*.log
+# Arquivo mestre preservado localmente; o site utiliza a versão otimizada.
+src/assets/crookie-rotation-v2.mp4
+dist
+.env
+.env.local

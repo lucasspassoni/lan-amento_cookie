@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Sora:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --cocoa:#100B0B; --surface:#1B1112; --brand:#FF3485; --cyan:#159CFF; --cookie:#3F211B; --peach:#FFB36B; --cream:#FFF4E9; color:var(--cream); background:var(--cocoa); font-family:Sora,sans-serif; color-scheme:dark; }
+* { box-sizing:border-box; }
+html { background:var(--cocoa); overflow-x:hidden; scroll-behavior:smooth; }
+body { margin:0; min-width:320px; overflow-x:hidden; background:var(--cocoa); }
+img,video { display:block; max-width:100%; }
+::selection { background:var(--brand); color:var(--cocoa); }
+::-webkit-scrollbar { width:10px; } ::-webkit-scrollbar-track { background:var(--cocoa); } ::-webkit-scrollbar-thumb { background:var(--cookie); border-radius:999px; }
+.cocoa-shell { background:var(--cocoa); }
+.logo-section:after { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.28) 100%); }
+.warm-glow { position:absolute; width:min(92vw,680px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(255,52,133,.11),rgba(255,179,107,.05) 31%,transparent 68%); filter:blur(22px); }
+.warm-glow--lower { transform:translateY(8%); }
+.crookie-hero { background:transparent; }
+.hero-product-light { position:absolute; width:min(76vw,920px); aspect-ratio:1; right:-12%; top:10%; background:radial-gradient(circle,rgba(255,179,107,.13),rgba(63,33,27,.08) 35%,transparent 69%); filter:blur(25px); }
+.brand-logo-frame { position:relative; width:min(100%,38rem); height:clamp(14.5rem,60vw,23rem); margin:0 auto; overflow:hidden; }
+.brand-logo-entrance { position:absolute; top:50%; left:50%; width:clamp(34rem,84vw,54rem); max-width:none; transform:translate(-50%,-50%); mix-blend-mode:screen; filter:contrast(1.03) saturate(1.04); }
+.footer-brand-logo { position:relative; display:block; width:5rem; height:5rem; flex:none; overflow:hidden; }
+.footer-brand-logo img { position:absolute; top:50%; left:50%; width:10rem; max-width:none; transform:translate(-50%,-50%); mix-blend-mode:screen; }
+button,input { font-family:Sora,sans-serif; }
+.font-display { font-optical-sizing:auto; }
+.crookie-wordmark { position:relative; display:inline-flex; align-items:flex-end; isolation:isolate; font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; line-height:.8; letter-spacing:-.035em; color:var(--cream); text-shadow:0 4px 16px rgba(0,0,0,.28); }
+.crookie-wordmark__name { position:relative; z-index:1; }
+.crookie-wordmark__accent { position:absolute; z-index:2; top:.09em; left:41%; width:clamp(9px,1vw,14px); aspect-ratio:1; border:2px solid var(--cocoa); border-radius:999px; background:var(--cyan); box-shadow:0 3px 9px rgba(21,156,255,.22); }
+.crookie-wordmark__period { position:relative; z-index:1; margin-left:.035em; color:var(--brand); font-size:.9em; line-height:.72; text-shadow:0 4px 14px rgba(255,52,133,.24); }
+@media (min-width:640px) { .brand-logo-frame { height:clamp(17rem,40vw,23rem); } }
+@media (min-width:768px) { .hero-shell { min-height:100vh; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
